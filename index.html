@@ -21,15 +21,12 @@
          font-family: 'Inter', sans-serif;
          background-color: #0A0A0A;
          color: #E2E8F0;
-         /* slate-200 */
       }
 
       .hero-section {
-         background-image: url('ChatGPT Image Jul 8, 2025, 10_14_13 AM.png');
-         /* Updated background image */
-         background-size: cover;
-         background-position: center;
+         background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
          position: relative;
+         min-height: 100vh;
       }
 
       .hero-overlay {
@@ -38,7 +35,7 @@
          left: 0;
          width: 100%;
          height: 100%;
-         background-color: rgba(0, 0, 0, 0.6);
+         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
          z-index: 1;
       }
 
@@ -54,11 +51,36 @@
       }
 
       .btn-primary {
-         @apply bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover: bg-blue-700 transition-all duration-300 transform hover:scale-105;
+         background-color: #2563eb;
+         color: white;
+         font-weight: 600;
+         padding: 0.75rem 2rem;
+         border-radius: 0.5rem;
+         transition: all 0.3s ease;
+         display: inline-block;
+         text-decoration: none;
+      }
+
+      .btn-primary:hover {
+         background-color: #1d4ed8;
+         transform: translateY(-2px);
+         box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
       }
 
       .btn-secondary {
-         @apply border border-blue-500 text-blue-400 font-semibold py-3 px-8 rounded-lg hover: bg-blue-500 hover:text-white transition-all duration-300;
+         border: 2px solid #3b82f6;
+         color: #60a5fa;
+         font-weight: 600;
+         padding: 0.75rem 2rem;
+         border-radius: 0.5rem;
+         transition: all 0.3s ease;
+         display: inline-block;
+         text-decoration: none;
+      }
+
+      .btn-secondary:hover {
+         background-color: #3b82f6;
+         color: white;
       }
 
       .client-logo {
@@ -70,6 +92,19 @@
       .client-logo:hover {
          filter: grayscale(0) brightness(1);
          opacity: 1;
+      }
+
+      /* Ensure proper spacing and visibility */
+      main {
+         position: relative;
+         z-index: 10;
+      }
+
+      .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding-left: 1.5rem;
+         padding-right: 1.5rem;
       }
    </style>
 
@@ -100,21 +135,6 @@
          ]
       }
    </script>
-   <script type="application/ld+json">
-      {
-         "@context": "https://schema.org",
-         "@type": "WebSite",
-         "url": "https://www.example.com",
-         "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-               "@type": "EntryPoint",
-               "urlTemplate": "https://www.example.com/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-         }
-      }
-   </script>
 </head>
 
 <body class="antialiased">
@@ -137,11 +157,11 @@
    </header>
 
    <!-- Hero Section -->
-   <section class="hero-section h-screen flex items-center justify-center text-center text-white">
+   <section class="hero-section flex items-center justify-center text-center text-white relative">
       <div class="hero-overlay"></div>
-      <div class="relative z-10 px-4">
-         <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">Data-Driven SEO for Ambitious NYC Brands</h1>
-         <p class="text-lg md:text-2xl text-slate-300 max-w-4xl mx-auto">We don't just rank you. We engineer market dominance and deliver measurable ROI.</p>
+      <div class="relative z-10 px-4 max-w-6xl mx-auto">
+         <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">Data-Driven SEO for Ambitious NYC Brands</h1>
+         <p class="text-lg md:text-2xl text-slate-300 max-w-4xl mx-auto mb-8">We don't just rank you. We engineer market dominance and deliver measurable ROI.</p>
          <div class="mt-8">
             <a href="#contact" class="btn-primary text-lg">Schedule Your Growth Strategy Session</a>
          </div>
@@ -149,11 +169,10 @@
    </section>
 
    <!-- Client Trust Bar -->
-   <section class="bg-[#0A0A0A] py-12">
+   <section class="bg-[#0A0A0A] py-16 relative z-10">
       <div class="container mx-auto px-6">
          <h2 class="text-center text-slate-400 text-sm font-bold tracking-widest uppercase mb-8">Trusted by NYC's Market Leaders</h2>
          <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
-            <!-- Replace with your client logos -->
             <img src="https://placehold.co/150x50/FFFFFF/0A0A0A?text=FINTECH+CO" alt="Fintech Company Logo" class="h-8 client-logo">
             <img src="https://placehold.co/150x50/FFFFFF/0A0A0A?text=LUXURY+BRAND" alt="Luxury Brand Logo" class="h-8 client-logo">
             <img src="https://placehold.co/150x50/FFFFFF/0A0A0A?text=SAAS+GIANT" alt="SaaS Giant Logo" class="h-8 client-logo">
@@ -163,129 +182,135 @@
       </div>
    </section>
 
-   <main class="container mx-auto px-6 py-20 md:py-32 space-y-20 md:space-y-32">
-      <!-- ROI Section -->
-      <section id="services" class="fade-in-section">
-         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">We Translate SEO into Revenue & Market Share</h2>
-            <p class="text-slate-400 text-lg">Our focus is on tangible outcomes that drive your business forward. We move beyond vanity metrics to deliver real, measurable results.</p>
-         </div>
-         <div class="grid md:grid-cols-3 gap-8 text-center">
-            <!-- Column 1 -->
-            <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-               <div class="flex justify-center mb-4">
-                  <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                  </svg>
-               </div>
-               <h3 class="text-xl font-bold text-white mb-2">Strategic Traffic Growth</h3>
-               <p class="text-slate-400">We attract high-intent organic traffic that converts, focusing on quality over quantity to fuel your sales pipeline.</p>
+   <main class="bg-[#0A0A0A] relative z-10">
+      <div class="container mx-auto px-6 py-20 md:py-32 space-y-20 md:space-y-32">
+         <!-- ROI Section -->
+         <section id="services" class="fade-in-section">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+               <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">We Translate SEO into Revenue & Market Share</h2>
+               <p class="text-slate-400 text-lg">Our focus is on tangible outcomes that drive your business forward. We move beyond vanity metrics to deliver real, measurable results.</p>
             </div>
-            <!-- Column 2 -->
-            <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-               <div class="flex justify-center mb-4">
-                  <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                  </svg>
-               </div>
-               <h3 class="text-xl font-bold text-white mb-2">Competitive Displacement</h3>
-               <p class="text-slate-400">Our data-driven approach analyzes competitor weaknesses to strategically capture their digital territory and market share.</p>
-            </div>
-            <!-- Column 3 -->
-            <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-               <div class="flex justify-center mb-4">
-                  <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                  </svg>
-               </div>
-               <h3 class="text-xl font-bold text-white mb-2">Measurable Business Impact</h3>
-               <p class="text-slate-400">Custom dashboards and transparent reporting connect SEO performance directly to your revenue goals and KPIs.</p>
-            </div>
-         </div>
-      </section>
-
-      <!-- SEO Framework Section -->
-      <section class="fade-in-section">
-         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our SEO Framework for NYC Enterprises</h2>
-            <p class="text-slate-400 text-lg">We deliver a holistic, integrated approach to SEO that builds sustainable long-term growth and defends your online presence.</p>
-         </div>
-         <div class="space-y-8 md:space-y-12">
-            <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-               <h3 class="text-2xl font-bold text-white mb-3">Enterprise SEO Strategy</h3>
-               <p class="text-slate-400 text-lg">Beyond keywords. We build comprehensive SEO moats around your brand, focusing on technical excellence, content authority, and digital PR to create an unassailable market position.</p>
-            </div>
-            <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-               <h3 class="text-2xl font-bold text-white mb-3">Data-Driven Content Marketing</h3>
-               <p class="text-slate-400 text-lg">Our content isn't just creative; it's a strategic asset. We create authoritative content that attracts, engages, and converts your target C-suite and high-value customers, establishing you as the definitive voice in your industry.</p>
-            </div>
-            <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-               <h3 class="text-2xl font-bold text-white mb-3">Technical SEO & Site Architecture</h3>
-               <p class="text-slate-400 text-lg">We ensure your digital foundation is flawless. We specialize in complex site migrations, JavaScript SEO, and Core Web Vitals optimization for large-scale, enterprise websites.</p>
-            </div>
-         </div>
-      </section>
-
-      <!-- NYC Advantage & Case Study Section -->
-      <section id="advantage" class="fade-in-section space-y-16">
-         <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The New York Advantage: Why We Win</h2>
-            <p class="text-slate-400 text-lg">Our strategies are forged in the world's most competitive market. We combine local intelligence with proprietary technology to deliver an unfair advantage.</p>
-         </div>
-
-         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-               <h3 class="text-2xl font-bold text-white mb-4">Proprietary Analytics Suite</h3>
-               <p class="text-slate-400 text-lg">Our team leverages a proprietary data analysis suite, <span class="text-blue-400 font-semibold">Momentum Insights</span>, to uncover opportunities and forecast market trends that other agencies miss, giving you a first-mover advantage.</p>
-            </div>
-            <img src="ChatGPT Image Jul 8, 2025, 07_22_46 AM.png" alt="Momentum Insights Logo" class="rounded-lg shadow-2xl bg-white p-4">
-         </div>
-
-         <!-- Mini Case Study & Testimonial -->
-         <div class="bg-blue-900/20 p-8 md:p-12 rounded-xl border border-blue-800">
-            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-               <div>
-                  <h3 class="text-xl font-bold text-blue-300 mb-4">Proven Results: Home Services SEO</h3>
-                  <p class="text-slate-300 text-lg mb-4">For <span class="font-semibold text-white">CoolBreeze HVAC</span> in Phoenix, we increased qualified organic leads by <span class="font-bold text-white">311%</span> and emergency calls by <span class="font-bold text-white">258%</span> in just 8 months.</p>
-                  <p class="text-slate-300 text-lg mb-6">This resulted in a 7-figure impact on their sales pipeline and established them as a local market leader.</p>
-                  <a href="case-studies.html" class="font-semibold text-blue-400 hover:text-blue-300 transition-colors text-lg">View All Home Services Case Studies →</a>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+               <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
+                  <div class="flex justify-center mb-4">
+                     <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                     </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">Strategic Traffic Growth</h3>
+                  <p class="text-slate-400">We attract high-intent organic traffic that converts, focusing on quality over quantity to fuel your sales pipeline.</p>
                </div>
                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
-                  <blockquote class="text-slate-400 italic">
-                     <img src="ChatGPT Image Jul 8, 2025, 06_19_21 AM.png" alt="CoolBreeze HVAC Solutions Logo" class="h-12 mb-4">
-                     <p>"Momentum Search Group completely transformed our online presence. We went from getting maybe one emergency call a week from Google to having our phones ring constantly."</p>
-                     <footer class="mt-4 not-italic">
-                        <span class="font-bold text-white">Mike Rodriguez, Owner</span>
-                        <br>
-                        <span class="text-sm text-slate-500">CoolBreeze HVAC Solutions</span>
-                     </footer>
-                  </blockquote>
+                  <div class="flex justify-center mb-4">
+                     <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                     </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">Competitive Displacement</h3>
+                  <p class="text-slate-400">Our data-driven approach analyzes competitor weaknesses to strategically capture their digital territory and market share.</p>
+               </div>
+               <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
+                  <div class="flex justify-center mb-4">
+                     <svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                     </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-2">Measurable Business Impact</h3>
+                  <p class="text-slate-400">Custom dashboards and transparent reporting connect SEO performance directly to your revenue goals and KPIs.</p>
                </div>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <!-- Final CTA Section -->
-      <section id="contact" class="fade-in-section bg-gray-900/50 rounded-2xl p-8 md:p-16 border border-gray-800">
-         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-center md:text-left">
-               <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Stop Competing. Start Dominating.</h2>
-               <p class="text-slate-400 text-lg">Let's build your custom SEO growth strategy. A consultation with our senior strategists will provide you with a clear roadmap for achieving your business objectives.</p>
+         <!-- SEO Framework Section -->
+         <section class="fade-in-section">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+               <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our SEO Framework for NYC Enterprises</h2>
+               <p class="text-slate-400 text-lg">We deliver a holistic, integrated approach to SEO that builds sustainable long-term growth and defends your online presence.</p>
             </div>
-            <div class="w-full">
-               <form action="https://formspree.io/f/xzzglvrz" method="POST" class="space-y-4">
-                  <div>
-                     <label for="name" class="sr-only">Name</label>
-                     <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+            <div class="space-y-8 md:space-y-12">
+               <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
+                  <h3 class="text-2xl font-bold text-white mb-3">Enterprise SEO Strategy</h3>
+                  <p class="text-slate-400 text-lg">Beyond keywords. We build comprehensive SEO moats around your brand, focusing on technical excellence, content authority, and digital PR to create an unassailable market position.</p>
+               </div>
+               <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
+                  <h3 class="text-2xl font-bold text-white mb-3">Data-Driven Content Marketing</h3>
+                  <p class="text-slate-400 text-lg">Our content isn't just creative; it's a strategic asset. We create authoritative content that attracts, engages, and converts your target C-suite and high-value customers, establishing you as the definitive voice in your industry.</p>
+               </div>
+               <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
+                  <h3 class="text-2xl font-bold text-white mb-3">Technical SEO & Site Architecture</h3>
+                  <p class="text-slate-400 text-lg">We ensure your digital foundation is flawless. We specialize in complex site migrations, JavaScript SEO, and Core Web Vitals optimization for large-scale, enterprise websites.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- NYC Advantage & Case Study Section -->
+         <section id="advantage" class="fade-in-section space-y-16">
+            <div class="text-center max-w-3xl mx-auto">
+               <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The New York Advantage: Why We Win</h2>
+               <p class="text-slate-400 text-lg">Our strategies are forged in the world's most competitive market. We combine local intelligence with proprietary technology to deliver an unfair advantage.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+               <div>
+                  <h3 class="text-2xl font-bold text-white mb-4">Proprietary Analytics Suite</h3>
+                  <p class="text-slate-400 text-lg">Our team leverages a proprietary data analysis suite, <span class="text-blue-400 font-semibold">Momentum Insights</span>, to uncover opportunities and forecast market trends that other agencies miss, giving you a first-mover advantage.</p>
+               </div>
+               <div class="bg-white p-8 rounded-lg shadow-2xl">
+                  <div class="text-center">
+                     <div class="text-2xl font-bold text-gray-800 mb-2">Momentum Insights</div>
+                     <div class="text-sm text-gray-600">Analytics Suite</div>
                   </div>
+               </div>
+            </div>
+
+            <!-- Mini Case Study & Testimonial -->
+            <div class="bg-blue-900/20 p-8 md:p-12 rounded-xl border border-blue-800">
+               <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                   <div>
-                     <label for="company" class="sr-only">Company</label>
-                     <input type="text" name="company" id="company" placeholder="Company Name" class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                     <h3 class="text-xl font-bold text-blue-300 mb-4">Proven Results: Home Services SEO</h3>
+                     <p class="text-slate-300 text-lg mb-4">For <span class="font-semibold text-white">CoolBreeze HVAC</span> in Phoenix, we increased qualified organic leads by <span class="font-bold text-white">311%</span> and emergency calls by <span class="font-bold text-white">258%</span> in just 8 months.</p>
+                     <p class="text-slate-300 text-lg mb-6">This resulted in a 7-figure impact on their sales pipeline and established them as a local market leader.</p>
+                     <a href="case-studies.html" class="font-semibold text-blue-400 hover:text-blue-300 transition-colors text-lg">View All Home Services Case Studies →</a>
                   </div>
-                  <div>
-                     <label for="email" class="sr-only">Email</label>
-                     <input type="email" name="email" id="email" placeholder="Work Email" required class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                  <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800">
+                     <blockquote class="text-slate-400 italic">
+                        <div class="bg-white p-4 rounded mb-4 inline-block">
+                           <div class="text-lg font-bold text-gray-800">CoolBreeze HVAC</div>
+                           <div class="text-sm text-gray-600">Solutions</div>
+                        </div>
+                        <p>"Momentum Search Group completely transformed our online presence. We went from getting maybe one emergency call a week from Google to having our phones ring constantly."</p>
+                        <footer class="mt-4 not-italic">
+                           <span class="font-bold text-white">Mike Rodriguez, Owner</span>
+                           <br>
+                           <span class="text-sm text-slate-500">CoolBreeze HVAC Solutions</span>
+                        </footer>
+                     </blockquote>
                   </div>
-                  <div>
-                     <label for="message" class="sr-only">Message</label>
-                     <textarea name="message" id="message" rows="4" placeholder="Tell us about your project..." class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+               </div>
+            </div>
+         </section>
+
+         <!-- Final CTA Section -->
+         <section id="contact" class="fade-in-section bg-gray-900/50 rounded-2xl p-8 md:p-16 border border-gray-800">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+               <div class="text-center md:text-left">
+                  <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Stop Competing. Start Dominating.</h2>
+                  <p class="text-slate-400 text-lg">Let's build your custom SEO growth strategy. A consultation with our senior strategists will provide you with a clear roadmap for achieving your business objectives.</p>
+               </div>
+               <div class="w-full">
+                  <form action="https://formspree.io/f/xzzglvrz" method="POST" class="space-y-4">
+                     <div>
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full bg-gray-800 border border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                     </div>
+                     <div>
+                        <label for="company" class="sr-only">Company</label>
+                        <input type="text" name="company" id="company" placeholder="Company Name" class="w-full bg-gray-800 border border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                     </div>
+                     <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Work Email" required class="w-full bg-gray-800 border border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                     </div>
+                     <div>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea name="message" id="message" rows="4" placeholder="Tell us about your project..." class="w-full bg-gray-800 border border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">

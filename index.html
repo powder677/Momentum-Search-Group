@@ -273,10 +273,10 @@
                <p class="text-slate-400 text-lg">Let's build your custom SEO growth strategy. A consultation with our senior strategists will provide you with a clear roadmap for achieving your business objectives.</p>
             </div>
             <div class="w-full">
-               <form action="#" method="POST" class="space-y-4">
+               <form action="https://formspree.io/f/xzzglvrz" method="POST" class="space-y-4">
                   <div>
                      <label for="name" class="sr-only">Name</label>
-                     <input type="text" name="name" id="name" placeholder="Your Name" class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                     <input type="text" name="name" id="name" placeholder="Your Name" required class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
                   <div>
                      <label for="company" class="sr-only">Company</label>
@@ -284,44 +284,8 @@
                   </div>
                   <div>
                      <label for="email" class="sr-only">Email</label>
-                     <input type="email" name="email" id="email" placeholder="Work Email" class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                     <input type="email" name="email" id="email" placeholder="Work Email" required class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                   </div>
-                  <button type="submit" class="w-full btn-primary text-lg">Schedule Your Strategy Session</button>
-               </form>
-            </div>
-         </div>
-      </section>
-   </main>
-
-   <!-- Footer -->
-   <footer class="bg-gray-900/50 border-t border-gray-800">
-      <div class="container mx-auto px-6 py-8 text-center text-slate-400">
-         <p>© 2025 Momentum Search Group. All Rights Reserved.</p>
-      </div>
-   </footer>
-
-   <!-- JavaScript for subtle animations -->
-   <script>
-      document.addEventListener('DOMContentLoaded', function() {
-         const sections = document.querySelectorAll('.fade-in-section');
-
-         const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-               if (entry.isIntersecting) {
-                  entry.target.classList.add('is-visible');
-                  observer.unobserve(entry.target);
-               }
-            });
-         }, {
-            threshold: 0.1
-         });
-
-         sections.forEach(section => {
-            observer.observe(section);
-         });
-      });
-   </script>
-
-</body>
-
-</html>
+                  <div>
+                     <label for="message" class="sr-only">Message</label>
+                     <textarea name="message" id="message" rows="4" placeholder="Tell us about your project..." class="w-full bg-gray-800 border-gray-700 rounded-md p-3 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition">

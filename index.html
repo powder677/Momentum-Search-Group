@@ -24,30 +24,22 @@
          /* slate-200 */
       }
 
-      .video-container {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         overflow: hidden;
-         z-index: -1;
+      .hero-section {
+         background-image: url('ChatGPT Image Jul 8, 2025, 10_14_13 AM.png');
+         /* Updated background image */
+         background-size: cover;
+         background-position: center;
+         position: relative;
       }
 
-      #bg-video {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-      }
-
-      .video-overlay {
+      .hero-overlay {
          position: absolute;
          top: 0;
          left: 0;
          width: 100%;
          height: 100%;
          background-color: rgba(0, 0, 0, 0.6);
-         z-index: -1;
+         z-index: 1;
       }
 
       .fade-in-section {
@@ -146,15 +138,8 @@
    </header>
 
    <!-- Hero Section -->
-   <section class="relative h-screen flex items-center justify-center text-center text-white">
-      <div class="video-container">
-         <!-- IMPORTANT: Replace with your professionally shot, highly optimized video file -->
-         <div class="video-overlay"></div>
-         <video autoplay loop muted playsinline id="bg-video" poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Loading+Video...">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-people-in-a-busy-conference-room-1445-large.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-         </video>
-      </div>
+   <section class="hero-section h-screen flex items-center justify-center text-center text-white">
+      <div class="hero-overlay"></div>
       <div class="relative z-10 px-4">
          <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">Data-Driven SEO for Ambitious NYC Brands</h1>
          <p class="text-lg md:text-2xl text-slate-300 max-w-4xl mx-auto">We don't just rank you. We engineer market dominance and deliver measurable ROI.</p>

@@ -42,8 +42,20 @@
          z-index: 1;
       }
 
+      /* UPDATED: Replaced Tailwind @apply with standard CSS for .btn-primary */
       .btn-primary {
-         @apply bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover: bg-blue-700 transition-all duration-300 transform hover:scale-105;
+         background-color: #3b82f6;
+         color: white;
+         padding: 12px 24px;
+         border: none;
+         border-radius: 6px;
+         cursor: pointer;
+         font-weight: 600;
+         transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+         background-color: #2563eb;
       }
 
       .btn-secondary {
